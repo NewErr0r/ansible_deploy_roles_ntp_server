@@ -1,0 +1,16 @@
+---
+- name: Started and Enabled Chrony
+  service: 
+    name: chronyd
+    enabled: true
+    state: started
+
+- name: Restart NTP
+  service: 
+    name: chronyd
+    state: restarted
+
+- name: Restart Firewalld
+  service: 
+    name: firewalld 
+    state: restarted

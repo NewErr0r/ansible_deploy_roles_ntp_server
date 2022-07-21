@@ -1,0 +1,14 @@
+1. Внести изменения в файл по пути: "/ntp_server_role/defaults/main.yaml"
+
+timezone: "Europe/Moscow" #Указать часовой пояс
+
+server_0: "0.ru.pool.ntp.org" #
+server_1: "1.ru.pool.ntp.org" ### Указать необходимые NTP сервера
+server_2: "2.ru.pool.ntp.org" ##
+server_3: "3.ru.pool.ntp.org" #
+
+allow_network: "192.168.0.0/24" #Указать разрешённые сети для синхронизации с этим сервером
+
+
+2. Для запуска NTP сервера на CentOS, раскомментировать в файлу "deploy_ntp.yaml" строку:
+#    - { role: ntp_server_role, when: ansible_os_family == 'RedHat'}

@@ -1,0 +1,28 @@
+---
+- name: Configure timezone
+  shell: timedatectl set-timezone "{{ timezone }}"
+
+- name: Install Chrony
+  dnf: 
+    name: chrony
+    state: latest 
+  notify: 
+    - Started and Enabled Chrony
+
+- name: Configure NTP pool Servers
+  template: 
+    src: chrony.conf.j2
+    dest: "{{ centos_path_chrony_conf }}"
+
+- name: Syncing NTP
+  shell: timedatectl set-ntp true
+  notify: 
+    - Restart NTP
+  
+- name: Configure Firewalld 
+  firewalld: 
+    service: ntp 
+    permanent: yes 
+    state: enabled 
+  notify:
+    - Restart Firewalld

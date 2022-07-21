@@ -1,0 +1,9 @@
+---
+timezone: "Europe/Moscow"
+
+server_0: "0.ru.pool.ntp.org"
+server_1: "1.ru.pool.ntp.org"
+server_2: "2.ru.pool.ntp.org"
+server_3: "3.ru.pool.ntp.org"
+
+allow_network: "192.168.0.0/24"

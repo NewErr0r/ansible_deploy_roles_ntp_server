@@ -1,0 +1,7 @@
+---
+- name: Deploy NTP Server
+  hosts: all
+  become: true
+
+  roles:
+#    - { role: ntp_server_role, when: ansible_os_family == 'RedHat'}

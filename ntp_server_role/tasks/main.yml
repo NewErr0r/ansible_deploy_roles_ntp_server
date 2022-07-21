@@ -1,0 +1,5 @@
+---
+- name: Deploy NTP Server on CentOS
+  include_tasks: centos_ntp_server.yaml
+  when: 
+    - ansible_os_family == "RedHat"
