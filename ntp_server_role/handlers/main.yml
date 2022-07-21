@@ -14,3 +14,18 @@
   service: 
     name: firewalld 
     state: restarted
+
+- name: Started and Enabled Chrony on Debian
+  service: 
+    name: chrony
+    enabled: true
+    state: started
+
+- name: Restart Chrony
+  service: 
+    name: chrony 
+    state: restarted
+
+    
+
+    

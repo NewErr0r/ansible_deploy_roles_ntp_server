@@ -11,7 +11,7 @@
 
 - name: Configure NTP pool Servers
   template: 
-    src: chrony.conf.j2
+    src: centos_chrony.conf.j2
     dest: "{{ centos_path_chrony_conf }}"
 
 - name: Syncing NTP

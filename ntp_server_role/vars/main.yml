@@ -1,2 +1,3 @@
 ---
 centos_path_chrony_conf: "/etc/chrony.conf"
+debian_path_chrony_conf: "/etc/chrony/chrony.conf"

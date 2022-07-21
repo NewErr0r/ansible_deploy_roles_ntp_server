@@ -12,3 +12,6 @@ allow_network: "192.168.0.0/24" #Указать разрешённые сети 
 
 2. Для запуска NTP сервера на CentOS, раскомментировать в файлу "deploy_ntp.yaml" строку:
 #    - { role: ntp_server_role, when: ansible_os_family == 'RedHat'}
+
+Для запуска NTP сервера на Debian/Ubuntu, раскомментировать в файлу "deploy_ntp.yaml" строку:
+#    - { role: ntp_server_role, when: ansible_os_family == 'Debian'}

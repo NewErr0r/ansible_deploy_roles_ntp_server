@@ -1,0 +1,18 @@
+---
+- name: Configure timezone
+  shell: timedatectl set-timezone "{{ timezone }}"
+
+- name: Install Chrony
+  apt:
+    name: chrony
+    state: latest
+    update_cache: yes
+  notify: 
+    - Started and Enabled Chrony on Debian
+
+- name: Configure NTP pool Servers
+  template: 
+    src: debian_chrony.conf.j2
+    dest: "{{ debian_path_chrony_conf }}"
+  notify: 
+    - Restart Chrony

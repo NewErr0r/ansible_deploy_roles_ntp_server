@@ -5,3 +5,4 @@
 
   roles:
 #    - { role: ntp_server_role, when: ansible_os_family == 'RedHat'}
+#    - { role: ntp_server_role, when: ansible_os_family == 'Debian'}
